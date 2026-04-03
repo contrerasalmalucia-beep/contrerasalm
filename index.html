@@ -19,23 +19,38 @@
         background-color: #004d4d; /* Dark Navy Teal */
         color: white;
         margin: 0;
-        /* Helvetica first, Arial as a backup */
         font-family: "Helvetica", "Arial", sans-serif;
-
-        /* This centers all text on the page */
         text-align: center;
 
-        /* Optional: This centers your content vertically too */
+        /* This centers everything vertically on the screen */
         display: flex;
         flex-direction: column;
         justify-content: center;
         min-height: 100vh;
       }
 
+      h1 {
+        font-size: 3rem; /* Makes "Alma Contreras" nice and big */
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        padding: 0;
+        list-style: none;
+        margin-top: 20px;
+      }
+
+      .nav-links li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+
       .logo, .nav-links li a {
         color: white !important;
         text-decoration: none;
+        font-weight: bold;
       }
+    </style>
 
       /* Keeps your list items from stacking strangely when centered */
       .nav-links {
