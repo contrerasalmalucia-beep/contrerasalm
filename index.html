@@ -17,25 +17,37 @@
   <style>
       body {
         background-color: #004d4d; /* Dark Navy Teal */
-        color: white;              /* Global white text */
+        color: white;
         margin: 0;
-        font-family: 'Inter', sans-serif;
+        /* Helvetica first, Arial as a backup */
+        font-family: "Helvetica", "Arial", sans-serif;
+
+        /* This centers all text on the page */
+        text-align: center;
+
+        /* Optional: This centers your content vertically too */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
       }
 
-      /* This fixes your navigation links and logo */
       .logo, .nav-links li a {
         color: white !important;
         text-decoration: none;
       }
 
-      .nav-links li a:hover {
-        color: #20b2aa;
+      /* Keeps your list items from stacking strangely when centered */
+      .nav-links {
+        padding: 0;
+        list-style: none;
       }
-    </style>
-</head>
-<body>
 
-  <!-- Navigation Bar -->
+      .nav-links li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+    </style>->
   <header>
     <nav>
       <div class="logo">MyBrand.</div>
