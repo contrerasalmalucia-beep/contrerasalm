@@ -15,7 +15,25 @@
 
   <!-- CSS: Link to your stylesheet (make sure you have a style.css file) -->
   <link rel="stylesheet" href="style.css"><style>
-      body {
+  <style>
+        body {
+          background-color: #004d4d; /* Dark Navy Teal */
+          color: white;              /* Makes all general text white */
+          margin: 0;
+          font-family: 'Inter', sans-serif;
+        }
+
+        /* This ensures your navigation links and logo are also white */
+        .logo, .nav-links li a {
+          color: white !important;
+          text-decoration: none;
+        }
+
+        /* Optional: subtle hover effect for your links */
+        .nav-links li a:hover {
+          color: #20b2aa;
+        }
+      </style>      body {
         background-color: #20b2aa; /* This is a beautiful Light Sea Green */
         color: white;              /* This makes all your text white */
         font-family: 'Inter', sans-serif; /* Uses the font you imported on line 14 */
