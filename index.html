@@ -33,17 +33,31 @@
         letter-spacing: 2px;
       }
 
+      /* This spaces out the links vertically */
       .nav-links {
         list-style: none;
         padding: 0;
+        margin-top: 40px; /* Space between your name and the links */
+      }
+
+      .nav-links li {
+        margin: 15px 0; /* This adds 15px of space above and below each word */
       }
 
       .nav-links a {
-        color: white !important;
+        color: white;
         text-decoration: none;
-        font-size: 1.2rem;
-        border-bottom: 1px solid white; /* Adds a nice clean line under the link */
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: inline-block; /* Helps the browser respect the spacing */
         padding-bottom: 5px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        transition: 0.3s;
+      }
+      .nav-links a:hover {
+        border-bottom: 1px solid white;
+        letter-spacing: 2px; /* A nice little subtle effect when you hover */
       }
 
       footer {
