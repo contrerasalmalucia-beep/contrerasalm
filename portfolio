@@ -68,7 +68,11 @@ portfolio.html
         opacity: 0.7;
       }
     </style>
-
+    model-viewer {
+        width: 100%;
+        height: 500px; /* Adjust height as needed */
+        background-color: #f0f0f0; /* Optional: adds a light grey bg */
+    }
       <body>
     <header>
         <li><a href="portfolio.html">Art Portfolio</a></li>
