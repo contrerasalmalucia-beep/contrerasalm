@@ -67,7 +67,30 @@
         opacity: 0.7;
       }
     </style>
+    /* This centers the container and sets a max width */
+    .model-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the H2 and the Model */
+        justify-content: center;
+        width: 100%;
+        margin: 40px auto;
+    }
 
+    /* This makes the 3D viewer big and responsive */
+    model-viewer {
+        width: 80vw;      /* Uses 80% of the screen width */
+        max-width: 800px; /* Prevents it from getting absurdly huge on monitors */
+        height: 600px;    /* Gives it enough vertical room */
+        background-color: #f0f0f0;
+        border-radius: 10px; /* Optional: rounds the corners slightly */
+    }
+
+    /* Make sure your H2 is centered too */
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
       <body>
     <header>
         <nav>
@@ -84,20 +107,19 @@
     </section>
     </main>
     <section class="model-container">
-        <h2>3D Artifact Study</h2>
-        <section class="model-container">
-      <h2>3D Artifact Study</h2>
-      <model-viewer
-          src="assets/assets.glb"
-          poster="assets/lacmawall.png"
-          alt="A 3D model of a creative artifact"
-          shadow-intensity="1"
-          camera-controls
-          auto-rotate
-          ar>
-      </model-viewer>
-  </section>
-    </section>
-    <footer>
-        <p>&copy; 2026 Alma Contreras</p>
-    </footer>
+          <h2>3D Artifact Study</h2>
+          <model-viewer
+              src="assets/assets.glb"
+              poster="assets/lacmawall.png"
+              alt="A 3D model of a creative artifact"
+              shadow-intensity="1"
+              camera-controls
+              auto-rotate
+              ar>
+          </model-viewer>
+      </section>
+  </main>
+
+  <footer>
+      <p>&copy; 2026 Alma Contreras</p>
+  </footer>
