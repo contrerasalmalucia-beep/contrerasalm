@@ -61,7 +61,10 @@ portfolio.html
         border-bottom: 1px solid white;
         letter-spacing: 2px; /* A nice little subtle effect when you hover */
       }
-
+      </html>
+      html, body {
+          cursor: url('assets:cursor.png') 16 16, auto;
+      }
       footer {
         margin-top: 50px;
         font-size: 0.8rem;
