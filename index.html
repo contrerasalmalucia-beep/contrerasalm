@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alma Contreras | Art Portfolio</title>
 
+    <!-- 3D Model Viewer Script -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
     <style>
         body {
-            background-color: #004d4d; /* Your Dark Navy Teal */
+            background-color: #004d4d; /* Navy Teal */
             color: white;
             margin: 0;
             font-family: "Helvetica", sans-serif;
@@ -17,93 +18,127 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding-top: 50px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
         }
 
         h1 {
             font-size: 3.5rem;
-            margin-top: 20px;
+            margin: 10px 0 5px 0;
             letter-spacing: 2px;
-            text-align: center;
         }
 
+        /* Updated Navigation Layout */
         .nav-links {
             list-style: none;
             padding: 0;
-            margin: 20px 0;
-            text-align: center;
+            margin: 20px 0 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* Spacing between links */
+            flex-wrap: wrap; /* Wraps cleanly on small mobile screens */
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 4px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
             border-bottom: 1px solid white;
+            opacity: 0.9;
         }
 
-        /* 3D Model Container */
-        .model-container {
+        main {
+            width: 100%;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            margin: 40px 0;
         }
 
-        model-viewer {
-            width: 80vw;
-            max-width: 800px;
-            height: 500px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .portfolio-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .model-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
         }
 
         h2 {
             margin-bottom: 20px;
             font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         footer {
-            margin: 50px 0;
+            margin-top: auto;
+            padding-top: 40px;
             font-size: 0.8rem;
             opacity: 0.7;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <h1>Alma Contreras</h1>
         <nav>
             <ul class="nav-links">
                 <li><a href="portfolio.html">Art Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">3D Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Alma Contreras</h1>
-        <img src="assets/iteration1.png" alt="Iteration 1" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; margin-bottom: 30px;">
+        <img src="assets/iteration1.png" alt="Iteration 1" class="portfolio-img">
 
-                <section class="model-container">
-                    <h2>3D Artifact Study</h2>
-                    <model-viewer
-                        src="assets/assets.glb"
-                        poster="assets/lacmawall.png"
-                        alt="A 3D model of a creative artifact"
-                        shadow-intensity="1"
-                        camera-controls
-                        auto-rotate
-                        ar>
-                    </model-viewer>
-                    
-                </section>
+        <section class="model-container">
+            <h2>3D Artifact Study</h2>
+            <model-viewer
+                src="assets/assets.glb"
+                poster="assets/lacmawall.png"
+                alt="A 3D model of a creative artifact"
+                shadow-intensity="1"
+                camera-controls
+                auto-rotate
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                touch-action="pan-y">
+            </model-viewer>
+        </section>
     </main>
 
     <footer>
