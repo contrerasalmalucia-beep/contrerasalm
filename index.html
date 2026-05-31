@@ -8,14 +8,20 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
     <style>
-        /* EMOJI CURSOR LOGIC */
+        /* ==========================================================================
+           1. CUSTOM SPARKLING CURSOR EFFECT
+           ========================================================================== */
         html, body {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>✨</text></svg>") 12 12, auto;
         }
+
         a, model-viewer, button {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>⭐</text></svg>") 12 12, pointer !important;
         }
 
+        /* ==========================================================================
+           2. GLOBAL PAGE STYLES & LAYOUT
+           ========================================================================== */
         body {
             background-color: #004d4d; /* Navy Teal */
             color: white;
@@ -41,7 +47,29 @@
             letter-spacing: 2px;
         }
 
-        /* Navigation Layout */
+        h2 {
+            margin: 40px 0 20px 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        main {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ==========================================================================
+           3. NAVIGATION LINKS
+           ========================================================================== */
         .nav-links {
             list-style: none;
             padding: 0;
@@ -68,20 +96,15 @@
             opacity: 0.9;
         }
 
-        main {
-            width: 100%;
-            max-width: 900px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
+        /* ==========================================================================
+           4. PORTFOLIO ELEMENTS (HERO IMAGE & 3D ENVIRONMENT)
+           ========================================================================== */
         .portfolio-img {
             width: 100%;
             max-width: 800px;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
@@ -91,19 +114,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 1.3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 8px;
-            width: 100%;
-            text-align: center;
         }
 
         model-viewer {
@@ -114,7 +124,9 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        /* NEW ARTWORK GRID SYSTEM */
+        /* ==========================================================================
+           5. ARTWORK GALLERY SYSTEM
+           ========================================================================== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -126,14 +138,14 @@
         .gallery-item {
             background-color: rgba(255, 255, 255, 0.03);
             border-radius: 10px;
-            padding: 10px;
+            padding: 12px;
             box-sizing: border-box;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px); /* Gentle lift effect on hover */
+            transform: translateY(-5px);
         }
 
         .gallery-item img {
@@ -144,13 +156,16 @@
         }
 
         .gallery-item p {
-            margin: 10px 0 5px 0;
+            margin: 12px 0 4px 0;
             font-size: 0.9rem;
             text-align: center;
             opacity: 0.8;
             letter-spacing: 0.5px;
         }
 
+        /* ==========================================================================
+           6. FOOTER
+           ========================================================================== */
         footer {
             margin-top: auto;
             padding-top: 40px;
@@ -175,7 +190,8 @@
     </header>
 
     <main>
-        <img src="assets/iteration1.png" alt="Iteration 1" class="portfolio-img">
+
+        <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
 
         <section class="model-container">
             <h2>3D Artifact Study</h2>
@@ -196,18 +212,18 @@
         <section class="gallery-grid">
 
             <div class="gallery-item">
-                <img src="assets/artwork1.png" alt="Description of piece 1">
-                <'iteration-3-01.npg'>Artwork Title One</>
+                <img src="assets/iteration-3-01.png" alt="Iteration 3 Panel">
+                <p>Iteration 3</p>
             </div>
 
             <div class="gallery-item">
-                <img src="assets/artwork2.png" alt="Description of piece 2">
-                <'iteration2.png'>Artwork Title Two</>
+                <img src="assets/iteration2.png" alt="Iteration 2 Panel">
+                <p>Iteration 2</p>
             </div>
 
             <div class="gallery-item">
-                <img src="assets/artwork3.png" alt="Description of piece 3">
-                <p>Artwork Title Three</p>
+                <img src="assets/iteration1.png" alt="Iteration 1 Panel">
+                <p>Iteration 1</p>
             </div>
 
         </section>
