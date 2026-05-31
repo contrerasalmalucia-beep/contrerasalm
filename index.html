@@ -8,6 +8,19 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
     <style>
+        /* EMOJI CURSOR LOGIC
+           This converts emojis into tiny, lightweight graphic codes
+           so the browser can load them instantly without external files!
+        */
+        html, body {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>✨</text></svg>") 12 12, auto;
+        }
+
+        /* This changes the cursor to a star when hovering over clickable elements */
+        a, model-viewer, button {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>⭐</text></svg>") 12 12, pointer !important;
+        }
+
         body {
             background-color: #004d4d; /* Navy Teal */
             color: white;
