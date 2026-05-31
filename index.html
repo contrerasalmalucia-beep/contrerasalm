@@ -8,15 +8,10 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
     <style>
-        /* EMOJI CURSOR LOGIC
-           This converts emojis into tiny, lightweight graphic codes
-           so the browser can load them instantly without external files!
-        */
+        /* EMOJI CURSOR LOGIC */
         html, body {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>✨</text></svg>") 12 12, auto;
         }
-
-        /* This changes the cursor to a star when hovering over clickable elements */
         a, model-viewer, button {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>⭐</text></svg>") 12 12, pointer !important;
         }
@@ -75,7 +70,7 @@
 
         main {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -83,6 +78,7 @@
 
         .portfolio-img {
             width: 100%;
+            max-width: 800px;
             height: auto;
             border-radius: 10px;
             margin-bottom: 40px;
@@ -91,16 +87,23 @@
 
         .model-container {
             width: 100%;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         h2 {
             margin-bottom: 20px;
             font-weight: 400;
             letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+            width: 100%;
+            text-align: center;
         }
 
         model-viewer {
@@ -111,12 +114,50 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
+        /* NEW ARTWORK GRID SYSTEM */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Gentle lift effect on hover */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .gallery-item p {
+            margin: 10px 0 5px 0;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0.8;
+            letter-spacing: 0.5px;
+        }
+
         footer {
             margin-top: auto;
             padding-top: 40px;
             font-size: 0.8rem;
             opacity: 0.7;
             text-align: center;
+            width: 100%;
         }
     </style>
 </head>
@@ -126,7 +167,7 @@
         <h1>Alma Contreras</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="portfolio.html">Art Portfolio</a></li>
+                <li><a href="index.html">Art Portfolio</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -149,6 +190,26 @@
                 ar-modes="webxr scene-viewer quick-look"
                 touch-action="pan-y">
             </model-viewer>
+        </section>
+
+        <h2>Selected Artworks</h2>
+        <section class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="assets/artwork1.png" alt="Description of piece 1">
+                <'iteration-3-01.npg'>Artwork Title One</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/artwork2.png" alt="Description of piece 2">
+                <'iteration2.png'>Artwork Title Two</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/artwork3.png" alt="Description of piece 3">
+                <p>Artwork Title Three</p>
+            </div>
+
         </section>
     </main>
 
