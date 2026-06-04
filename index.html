@@ -13,6 +13,7 @@
            ========================================================================== */
         html, body {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>✨</text></svg>") 12 12, auto;
+            scroll-behavior: smooth; /* Adds smooth scrolling when clicking nav links */
         }
 
         a, model-viewer, button {
@@ -164,6 +165,39 @@
         }
 
         /* ==========================================================================
+           5b. NEW SECTIONS (ABOUT & CONTACT)
+           ========================================================================== */
+        .content-section {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        .content-section p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #b3ffff; /* Light accent teal */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ==========================================================================
            6. FOOTER
            ========================================================================== */
         footer {
@@ -182,51 +216,68 @@
         <h1>Alma Contreras</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Art Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#portfolio">Art Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
-        <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
+        <div id="portfolio" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+            <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
 
-        <section class="model-container">
-            <h2>3D Artifact Study</h2>
-            <model-viewer
-                src="assets/assets.glb"
-                poster="assets/lacmawall.png"
-                alt="A 3D model of a creative artifact"
-                shadow-intensity="1"
-                camera-controls
-                auto-rotate
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                touch-action="pan-y">
-            </model-viewer>
+            <section class="model-container">
+                <h2>3D Artifact Study</h2>
+                <model-viewer
+                    src="assets/assets.glb"
+                    poster="assets/lacmawall.png"
+                    alt="A 3D model of a creative artifact"
+                    shadow-intensity="1"
+                    camera-controls
+                    auto-rotate
+                    ar
+                    ar-modes="webxr scene-viewer quick-look"
+                    touch-action="pan-y">
+                </model-viewer>
+            </section>
+
+            <h2>Selected Artworks</h2>
+            <section class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/iteration-3-01.png" alt="Iteration 3 Panel">
+                    <p>Iteration 3</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/iteration2.png" alt="Iteration 2 Panel">
+                    <p>Iteration 2</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/iteration1.png" alt="Iteration 1 Panel">
+                    <p>Iteration 1</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="about" class="content-section">
+            <h2>About the Artist</h2>
+            <p>
+                Hi, my name is Alma Contreras. I am a multidisciplinary artist living in Los Angeles. My work intertwines common symbols and imagery from daily life rituals with the goal of exploring the never-static vitality of life.
+            </p>
         </section>
 
-        <h2>Selected Artworks</h2>
-        <section class="gallery-grid">
+        <section id="contact" class="content-section">
+            <h2>Get in Touch</h2>
+            <p>Interested in collaborating or viewing more of my work? Feel free to reach out!</p>
+            <div class="contact-links">
+                <a href="almalucy@gmail.com">Email Me</a>
 
-            <div class="gallery-item">
-                <img src="assets/iteration-3-01.png" alt="Iteration 3 Panel">
-                <p>Iteration 3</p>
             </div>
-
-            <div class="gallery-item">
-                <img src="assets/iteration2.png" alt="Iteration 2 Panel">
-                <p>Iteration 2</p>
-            </div>
-
-            <div class="gallery-item">
-                <img src="assets/iteration1.png" alt="Iteration 1 Panel">
-                <p>Iteration 1</p>
-            </div>
-
         </section>
+
     </main>
 
     <footer>
