@@ -105,7 +105,7 @@
         }
 
         /* ==========================================================================
-           4. PORTFOLIO ELEMENTS (HERO IMAGE)
+           4. PORTFOLIO ELEMENTS (HERO IMAGE & VIDEO SEQUENCE)
            ========================================================================== */
         .portfolio-img {
             width: 100%;
@@ -114,6 +114,23 @@
             border-radius: 10px;
             margin-bottom: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background-color: rgba(255, 255, 255, 0.05);
         }
 
         /* ==========================================================================
@@ -240,6 +257,15 @@
                     <img src="assets/iteration1.png" alt="Iteration 1 Panel">
                     <p>Iteration 1</p>
                 </div>
+            </section>
+
+            <!-- Video Sequence Section -->
+            <section class="video-container">
+                <h2>Video Sequence Documentation</h2>
+                <video controls autoplay muted loop playsinline poster="assets/iteration1.png">
+                    <source src="assets/assetsvideo_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </section>
         </div>
 
