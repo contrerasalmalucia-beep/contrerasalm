@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alma Contreras | Art Portfolio</title>
 
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
     <style>
         /* ==========================================================================
            1. CUSTOM SPARKLING CURSOR EFFECT
            ========================================================================== */
         html, body {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>✨</text></svg>") 12 12, auto;
-            scroll-behavior: smooth; /* Adds smooth scrolling when clicking nav links */
+            scroll-behavior: smooth;
         }
 
-        a, model-viewer, button {
+        a, button {
             cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='24'>⭐</text></svg>") 12 12, pointer !important;
         }
 
@@ -25,9 +23,9 @@
            ========================================================================== */
         body {
             background-color: #004d4d; /* Navy Teal */
-            color: white;
+            color: #ffffff;
             margin: 0;
-            font-family: "Helvetica", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -68,6 +66,15 @@
             align-items: center;
         }
 
+        /* Prevents target sections from sticking directly to the browser top edge when clicking nav links */
+        .target-section {
+            scroll-margin-top: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* ==========================================================================
            3. NAVIGATION LINKS
            ========================================================================== */
@@ -82,7 +89,7 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             font-size: 1rem;
             text-transform: uppercase;
@@ -93,12 +100,12 @@
         }
 
         .nav-links a:hover {
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid #ffffff;
             opacity: 0.9;
         }
 
         /* ==========================================================================
-           4. PORTFOLIO ELEMENTS (HERO IMAGE & 3D ENVIRONMENT)
+           4. PORTFOLIO ELEMENTS (HERO IMAGE)
            ========================================================================== */
         .portfolio-img {
             width: 100%;
@@ -109,31 +116,16 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .model-container {
-            width: 100%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        model-viewer {
-            width: 100%;
-            height: 500px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
         /* ==========================================================================
            5. ARTWORK GALLERY SYSTEM
            ========================================================================== */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
             width: 100%;
             margin-bottom: 50px;
+            box-sizing: border-box;
         }
 
         .gallery-item {
@@ -142,11 +134,11 @@
             padding: 12px;
             box-sizing: border-box;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .gallery-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
         }
 
         .gallery-item img {
@@ -165,40 +157,43 @@
         }
 
         /* ==========================================================================
-           5b. NEW SECTIONS (ABOUT & CONTACT)
+           6. CONTENT SECTIONS (ABOUT & CONTACT)
            ========================================================================== */
         .content-section {
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
             text-align: center;
             margin-bottom: 60px;
-            line-height: 1.6;
+            line-height: 1.7;
+            scroll-margin-top: 60px;
         }
 
         .content-section p {
             opacity: 0.9;
             font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+        .email-highlight {
+            font-size: 1.2rem;
+            margin-top: 25px;
         }
 
-        .contact-links a {
+        .email-highlight a {
             color: #b3ffff; /* Light accent teal */
             text-decoration: none;
             font-weight: bold;
+            border-bottom: 1px dashed rgba(179, 255, 255, 0.4);
+            transition: all 0.2s ease;
         }
 
-        .contact-links a:hover {
-            text-decoration: underline;
+        .email-highlight a:hover {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
         }
 
         /* ==========================================================================
-           6. FOOTER
+           7. FOOTER
            ========================================================================== */
         footer {
             margin-top: auto;
@@ -225,23 +220,9 @@
 
     <main>
 
-        <div id="portfolio" style="width:100%; display:flex; flex-direction:column; align-items:center;">
+        <!-- Portfolio Section -->
+        <div id="portfolio" class="target-section">
             <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
-
-            <section class="model-container">
-                <h2>3D Artifact Study</h2>
-                <model-viewer
-                    src="assets/assets.glb"
-                    poster="assets/lacmawall.png"
-                    alt="A 3D model of a creative artifact"
-                    shadow-intensity="1"
-                    camera-controls
-                    auto-rotate
-                    ar
-                    ar-modes="webxr scene-viewer quick-look"
-                    touch-action="pan-y">
-                </model-viewer>
-            </section>
 
             <h2>Selected Artworks</h2>
             <section class="gallery-grid">
@@ -262,6 +243,7 @@
             </section>
         </div>
 
+        <!-- About Section -->
         <section id="about" class="content-section">
             <h2>About the Artist</h2>
             <p>
@@ -269,14 +251,14 @@
             </p>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="content-section">
-      <h2>Get in Touch</h2>
-      <p>I am always open to collaborations, exhibitions, and commissions.</p>
-
-      <p style="font-size: 1.2rem; margin-top: 20px;">
-          Contact me directly at: <strong>almalucy@gmail.com</strong>
-      </p>
-  </section>
+            <h2>Get in Touch</h2>
+            <p>I am always open to collaborations, exhibitions, and commissions.</p>
+            <p class="email-highlight">
+                Contact me directly at: <a href="mailto:almalucy@gmail.com"><strong>almalucy@gmail.com</strong></a>
+            </p>
+        </section>
 
     </main>
 
