@@ -272,6 +272,57 @@
             width: 100%;
             letter-spacing: 0.5px;
         }
+
+        /* ==========================================================================
+           8. RESPONSIVE MEDIA QUERIES (MOBILE OPTIMIZATION)
+           ========================================================================== */
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 15px; /* Comfortable margins on mobile screens */
+            }
+
+            h1 {
+                font-size: 2.2rem; /* Dynamically scaled down so your name doesn't break into awkward lines */
+                letter-spacing: 1px;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+                margin: 40px 0 10px 0;
+            }
+
+            .nav-links {
+                gap: 20px; /* Brings nav elements slightly closer together for standard screen sizes */
+                margin-bottom: 30px;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .section-description {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr; /* Stack panels seamlessly vertically on small handheld layouts */
+                gap: 20px;
+            }
+
+            .study-display-box, .gallery-item {
+                padding: 10px; /* Maximize actual artwork display area */
+            }
+
+            .content-section p {
+                font-size: 1rem;
+            }
+
+            .email-highlight {
+                font-size: 1.05rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -331,7 +382,6 @@
             <!-- 3D Study Presentation Box -->
             <section class="study-container">
                 <h2>3D Study Pink Donut Box</h2>
-                <!-- BRIEF & CONCEPTUAL DONUT BOX DESCRIPTION -->
                 <p class="section-description">
                     This 3D study is an homage to the legendary story behind the Los Angeles pink donut box. Navigating a new digital medium, the project represents a deliberate creative challenge: translating a physically nostalgic, culturally rich piece of SoCal history into the precise world of 3D design.
                 </p>
