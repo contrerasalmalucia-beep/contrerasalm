@@ -19,11 +19,11 @@
         }
 
         /* ==========================================================================
-           2. GLOBAL PAGE STYLES & LAYOUT
+           2. GLOBAL PAGE STYLES & LAYOUT (UPDATED DEEP TEAL BACKGROUND)
            ========================================================================== */
         body {
-            background-color: #004d4d; /* Navy Teal */
-            color: #ffffff;
+            background-color: #002d2d; /* Deep Forest Teal (Darker, richer blue-green) */
+            color: #e0f2f1; /* Soft off-white for improved readability and depth */
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             display: flex;
@@ -41,19 +41,22 @@
         }
 
         h1 {
+            color: #ffffff; /* Crisp white focal point */
             font-size: 3.5rem;
             margin: 10px 0 5px 0;
             letter-spacing: 2px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         h2 {
-            margin: 40px 0 20px 0;
-            font-weight: 400;
-            letter-spacing: 1px;
+            color: #ffffff;
+            margin: 50px 0 25px 0;
+            font-weight: 500;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-size: 1.3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-bottom: 8px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 12px;
             width: 100%;
             text-align: center;
         }
@@ -84,24 +87,25 @@
             margin: 20px 0 40px 0;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.75;
         }
 
         .nav-links a:hover {
-            border-bottom: 1px solid #ffffff;
-            opacity: 0.9;
+            border-bottom: 2px solid #ffffff;
+            opacity: 1;
         }
 
         /* ==========================================================================
@@ -111,9 +115,9 @@
             width: 100%;
             max-width: 800px;
             height: auto;
-            border-radius: 10px;
+            border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
         }
 
         .video-container {
@@ -128,9 +132,9 @@
         .video-container video {
             width: 100%;
             height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background-color: rgba(255, 255, 255, 0.02);
         }
 
         .study-container {
@@ -143,17 +147,19 @@
         }
 
         .study-display-box {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            padding: 16px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 18px;
             box-sizing: border-box;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             width: 100%;
         }
 
         .study-display-box:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.04);
         }
 
         .study-display-box img {
@@ -164,43 +170,48 @@
         }
 
         /* ==========================================================================
-           5. ARTWORK GALLERY SYSTEM
+           5. ARTWORK GALLERY SYSTEM (UPDATED GLASSMORPHISM STYLING)
            ========================================================================== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
+            gap: 28px;
             width: 100%;
             margin-bottom: 50px;
             box-sizing: border-box;
         }
 
         .gallery-item {
-            background-color: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 14px;
             box-sizing: border-box;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .gallery-item:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
+            background-color: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            border-radius: 6px;
+            border-radius: 8px;
             display: block;
         }
 
         .gallery-item p {
-            margin: 12px 0 4px 0;
-            font-size: 0.9rem;
+            margin: 14px 0 4px 0;
+            font-size: 0.95rem;
+            font-weight: 500;
             text-align: center;
-            opacity: 0.8;
+            opacity: 0.9;
             letter-spacing: 0.5px;
+            color: #ffffff;
         }
 
         /* ==========================================================================
@@ -211,32 +222,32 @@
             max-width: 700px;
             text-align: center;
             margin-bottom: 60px;
-            line-height: 1.7;
+            line-height: 1.8;
             scroll-margin-top: 60px;
         }
 
         .content-section p {
-            opacity: 0.9;
+            opacity: 0.85;
             font-size: 1.1rem;
             margin-bottom: 15px;
         }
 
         .email-highlight {
             font-size: 1.2rem;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .email-highlight a {
-            color: #b3ffff; /* Light accent teal */
+            color: #80f2f2; /* Vibrant clean teal accent */
             text-decoration: none;
-            font-weight: bold;
-            border-bottom: 1px dashed rgba(179, 255, 255, 0.4);
+            font-weight: 600;
+            border-bottom: 2px dashed rgba(128, 242, 242, 0.3);
             transition: all 0.2s ease;
         }
 
         .email-highlight a:hover {
             color: #ffffff;
-            border-bottom: 1px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
         }
 
         /* ==========================================================================
@@ -245,10 +256,11 @@
         footer {
             margin-top: auto;
             padding-top: 40px;
-            font-size: 0.8rem;
-            opacity: 0.7;
+            font-size: 0.85rem;
+            opacity: 0.5;
             text-align: center;
             width: 100%;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -267,6 +279,7 @@
 
     <main>
 
+        <!-- Portfolio Section -->
         <div id="portfolio" class="target-section">
             <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
 
@@ -288,6 +301,7 @@
                 </div>
             </section>
 
+            <!-- Video Sequence Section -->
             <section class="video-container">
                 <h2>Video Sequence Documentation</h2>
                 <video controls autoplay muted loop playsinline poster="assets/iteration1.png">
@@ -296,6 +310,7 @@
                 </video>
             </section>
 
+            <!-- 3D Study Presentation Box -->
             <section class="study-container">
                 <h2>3D Study Pink Donut Box</h2>
                 <div class="study-display-box">
@@ -304,6 +319,7 @@
             </section>
         </div>
 
+        <!-- About Section -->
         <section id="about" class="content-section">
             <h2>About the Artist</h2>
             <p>
@@ -311,6 +327,7 @@
             </p>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="content-section">
             <h2>Get in Touch</h2>
             <p>I am always open to collaborations, exhibitions, and commissions.</p>
