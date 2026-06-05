@@ -61,7 +61,6 @@
             text-align: center;
         }
 
-        /* Responsive target adjustment for navigation items */
         .target-section {
             scroll-margin-top: 50px;
             width: 100%;
@@ -135,14 +134,6 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 40px;
-        }
-
-        .video-container video {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            background-color: rgba(255, 255, 255, 0.02);
         }
 
         .study-container {
@@ -342,8 +333,10 @@
 
     <main>
 
+        <!-- Main Introduction Hero Image -->
         <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
 
+        <!-- Selected Artworks Grid (Nav link target) -->
         <h2 id="portfolio" class="target-section">Selected Artworks</h2>
         <p class="section-description">
             These selected works are a digital collage study exploring the ritual of coffee. The symbols within the collages represent items that connect me directly to my personal routine of making and drinking coffee.
@@ -351,33 +344,38 @@
 
         <section class="gallery-grid">
             <div class="gallery-item">
-                <img src="assets/iteration-3-01.png" alt="Iteration 3 Panel">
+                <img src="assets/iteration-3-01.png" alt="Iteration 3 Panel" loading="lazy">
                 <p>Iteration 3</p>
             </div>
 
             <div class="gallery-item">
-                <img src="assets/iteration2.png" alt="Iteration 2 Panel">
+                <img src="assets/iteration2.png" alt="Iteration 2 Panel" loading="lazy">
                 <p>Iteration 2</p>
             </div>
 
             <div class="gallery-item">
-                <img src="assets/iteration1.png" alt="Iteration 1 Panel">
+                <img src="assets/iteration1.png" alt="Iteration 1 Panel" loading="lazy">
                 <p>Iteration 1</p>
             </div>
         </section>
 
+        <!-- Video Sequence Section -->
         <section class="video-container">
             <h2>Video Sequence Documentation</h2>
             <p class="section-description">
                 Never Static is a video about nothing and everything—about the infinite motion of life. Everything is always evolving, transforming, and moving, from every single cell to every single atom.
             </p>
 
-            <video controls autoplay muted loop playsinline poster="assets/iteration1.png">
-                <source src="assets/assetsvideo_3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <!-- Lightning-Fast Optimized YouTube Embed -->
+            <iframe
+                style="width: 100%; aspect-ratio: 16/9; border-radius: 16px; border: none; box-shadow: 0 15px 35px rgba(0,0,0,0.4);"
+                src="https://www.youtube.com/embed/wJUTm_ZVhFA?autoplay=1&mute=1&loop=1&playlist=wJUTm_ZVhFA"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
         </section>
 
+        <!-- 3D Study Presentation Box -->
         <section class="study-container">
             <h2>3D Study Pink Donut Box</h2>
             <p class="section-description">
@@ -385,10 +383,11 @@
             </p>
 
             <div class="study-display-box">
-                <img src="assets/donut box.png" alt="3D Study Pink Donut Box Presentation Image">
+                <img src="assets/donut box.png" alt="3D Study Pink Donut Box Presentation Image" loading="lazy">
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="content-section target-section">
             <h2>About the Artist</h2>
             <p>
@@ -396,6 +395,7 @@
             </p>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="content-section target-section">
             <h2>Get in Touch</h2>
             <p>I am always open to collaborations, exhibitions, and commissions.</p>
