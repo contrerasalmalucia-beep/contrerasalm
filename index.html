@@ -19,11 +19,11 @@
         }
 
         /* ==========================================================================
-           2. GLOBAL PAGE STYLES & LAYOUT (UPDATED DEEP TEAL BACKGROUND)
+           2. GLOBAL PAGE STYLES & LAYOUT
            ========================================================================== */
         body {
-            background-color: #002d2d; /* Deep Forest Teal (Darker, richer blue-green) */
-            color: #e0f2f1; /* Soft off-white for improved readability and depth */
+            background-color: #002d2d; /* Deep Forest Teal */
+            color: #e0f2f1; /* Soft off-white */
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             display: flex;
@@ -41,7 +41,7 @@
         }
 
         h1 {
-            color: #ffffff; /* Crisp white focal point */
+            color: #ffffff;
             font-size: 3.5rem;
             margin: 10px 0 5px 0;
             letter-spacing: 2px;
@@ -50,7 +50,7 @@
 
         h2 {
             color: #ffffff;
-            margin: 50px 0 25px 0;
+            margin: 50px 0 10px 0;
             font-weight: 500;
             letter-spacing: 1.5px;
             text-transform: uppercase;
@@ -61,6 +61,17 @@
             text-align: center;
         }
 
+        .section-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 700px;
+            text-align: center;
+            opacity: 0.75;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
         main {
             width: 100%;
             max-width: 900px;
@@ -69,7 +80,6 @@
             align-items: center;
         }
 
-        /* Prevents target sections from sticking directly to the browser top edge when clicking nav links */
         .target-section {
             scroll-margin-top: 40px;
             width: 100%;
@@ -170,7 +180,7 @@
         }
 
         /* ==========================================================================
-           5. ARTWORK GALLERY SYSTEM (UPDATED GLASSMORPHISM STYLING)
+           5. ARTWORK GALLERY SYSTEM
            ========================================================================== */
         .gallery-grid {
             display: grid;
@@ -238,7 +248,7 @@
         }
 
         .email-highlight a {
-            color: #80f2f2; /* Vibrant clean teal accent */
+            color: #80f2f2;
             text-decoration: none;
             font-weight: 600;
             border-bottom: 2px dashed rgba(128, 242, 242, 0.3);
@@ -284,6 +294,10 @@
             <img src="assets/iteration1.png" alt="Iteration 1 Display" class="portfolio-img">
 
             <h2>Selected Artworks</h2>
+            <p class="section-description">
+                These selected works are a digital collage study exploring the ritual of coffee. The symbols within the collages represent items that connect me directly to my personal routine of making and drinking coffee.
+            </p>
+
             <section class="gallery-grid">
                 <div class="gallery-item">
                     <img src="assets/iteration-3-01.png" alt="Iteration 3 Panel">
@@ -304,6 +318,10 @@
             <!-- Video Sequence Section -->
             <section class="video-container">
                 <h2>Video Sequence Documentation</h2>
+                <p class="section-description">
+                    Never Static is a video about nothing and everything—about the infinite motion of life. Everything is always evolving, transforming, and moving, from every single cell to every single atom.
+                </p>
+
                 <video controls autoplay muted loop playsinline poster="assets/iteration1.png">
                     <source src="assets/assetsvideo_3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -313,6 +331,11 @@
             <!-- 3D Study Presentation Box -->
             <section class="study-container">
                 <h2>3D Study Pink Donut Box</h2>
+                <!-- BRIEF & CONCEPTUAL DONUT BOX DESCRIPTION -->
+                <p class="section-description">
+                    This 3D study is an homage to the legendary story behind the Los Angeles pink donut box. Navigating a new digital medium, the project represents a deliberate creative challenge: translating a physically nostalgic, culturally rich piece of SoCal history into the precise world of 3D design.
+                </p>
+
                 <div class="study-display-box">
                     <img src="assets/donut box.png" alt="3D Study Pink Donut Box Presentation Image">
                 </div>
